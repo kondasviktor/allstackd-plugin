@@ -1,0 +1,40 @@
+MIT License
+
+Copyright (c) 2026 AllStackd
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-------------------------------------------------------------------------------
+SCOPE NOTICE (not part of the MIT grant above)
+
+This MIT license applies ONLY to the files in this plugin distribution package
+(manifests, MCP client config snippets, agent skills, and marketplace listing
+helpers).
+
+It does NOT license, open-source, or grant rights to:
+  - the AllStackd SaaS application or source code
+  - the AllStackd API, MCP server implementation, or backend
+  - dashboards, databases, billing, AWS integrations, or other product IP
+  - trademarks, logos (except as needed to identify the product in listings),
+    or the allstackd.com service
+
+Use of the AllStackd service remains subject to AllStackd Terms of Service,
+Privacy Policy, and a paid/trial subscription. An installable plugin that
+points at https://allstackd.com/api/mcp is a client connector, not a copy of
+the product.

@@ -1,0 +1,14 @@
+{
+  "name": "allstackd",
+  "description": "Amazon SES control plane for product portfolios — remote MCP plus skill for projects, domains, templates, and transactional send on your own SES.",
+  "source": {
+    "source": "github",
+    "repo": "kondasviktor/allstackd-plugin",
+    "ref": "main",
+    "sha": "REPLACE_WITH_COMMIT_SHA_AT_SUBMIT_TIME",
+    "path": "."
+  },
+  "category": "developer-tools",
+  "homepage": "https://allstackd.com",
+  "notes": "Draft catalog entry for xai-org/plugin-marketplace. Paste into .grok-plugin/marketplace.json plugins array per their README; pin sha; regenerate plugin-index.json with their script. Do not submit until the public plugin repo exists."
+}

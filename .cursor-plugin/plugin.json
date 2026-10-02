@@ -1,0 +1,19 @@
+{
+  "name": "allstackd",
+  "description": "Amazon SES control plane for studios and agencies — portfolio health, domains, templates, and transactional send through your own AWS SES.",
+  "version": "0.1.0",
+  "author": {
+    "name": "AllStackd",
+    "email": "support@allstackd.com"
+  },
+  "homepage": "https://allstackd.com",
+  "repository": "https://github.com/kondasviktor/allstackd-plugin",
+  "license": "MIT",
+  "keywords": [
+    "ses",
+    "email",
+    "aws",
+    "mcp",
+    "transactional"
+  ]
+}

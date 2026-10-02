@@ -1,0 +1,22 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "allstackd",
+  "description": "Amazon SES control plane for product portfolios — list projects, domains, templates, and send transactional email through your own SES account.",
+  "version": "0.1.0",
+  "author": {
+    "name": "AllStackd",
+    "email": "support@allstackd.com",
+    "url": "https://allstackd.com"
+  },
+  "homepage": "https://allstackd.com",
+  "repository": "https://github.com/kondasviktor/allstackd-plugin",
+  "license": "MIT",
+  "keywords": [
+    "amazon-ses",
+    "email",
+    "transactional-email",
+    "byok",
+    "mcp",
+    "portfolio"
+  ]
+}
