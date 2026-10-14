@@ -2,10 +2,7 @@
   "mcpServers": {
     "allstackd": {
       "type": "http",
-      "url": "https://allstackd.com/api/mcp",
-      "headers": {
-        "Authorization": "Bearer ${ALLSTACKD_API_KEY}"
-      }
+      "url": "https://allstackd.com/api/mcp"
     }
   }
 }

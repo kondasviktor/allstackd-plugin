@@ -26,23 +26,23 @@ If they have one app, want zero AWS, or ask for the fastest hosted email API wit
 1. AllStackd workspace (signed-in account on https://allstackd.com).
 2. Active AWS connection (Observe first is fine; Control required to send).
 3. Project in Control mode with a verified sender domain.
-4. Scoped API key (`as_…`) with the needed scopes, or OAuth when the host supports it.
+4. Signed in via OAuth (preferred) or a scoped API key (`as_…`) when the host uses Bearer auth.
 5. Paid or trial plan after the first active AWS connection.
 
 If any of these are missing, guide them through the dashboard. Do not call `send_email`.
 
-## MCP tools (remote: https://allstackd.com/api/mcp)
+## MCP tools
 
 | Tool | Use |
 |------|-----|
-| `list_projects` | Confirm which project the API key is bound to |
+| `list_projects` | Confirm which project the session is bound to |
 | `list_domains` | Check verification / sender readiness |
 | `list_templates` / `preview_template` | Find or render a template before send |
 | `create_template` / `update_template` / `publish_template` | Manage templates (needs `template:write`) |
 | `get_usage` | Daily usage for the workspace |
 | `send_email` | Transactional send only — requires Control + verified From + `email:send` |
 
-Auth: `Authorization: Bearer <ALLSTACKD_API_KEY>` until hosted OAuth ships.
+Auth: prefer hosted OAuth at `https://allstackd.com/mcp` (Claude / ChatGPT). For Cursor, Grok, and CLI hosts that use Bearer keys, connect `https://allstackd.com/api/mcp` with `Authorization: Bearer as_…` from Dashboard → API keys.
 
 ## Happy path the agent should follow
 

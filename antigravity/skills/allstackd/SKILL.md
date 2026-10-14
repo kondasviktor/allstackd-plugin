@@ -42,7 +42,7 @@ If any of these are missing, guide them through the dashboard. Do not call `send
 | `get_usage` | Daily usage for the workspace |
 | `send_email` | Transactional send only — requires Control + verified From + `email:send` |
 
-Auth: `Authorization: Bearer <ALLSTACKD_API_KEY>` until hosted OAuth ships.
+Auth: Bearer API key on `https://allstackd.com/api/mcp` — set `Authorization: Bearer as_…` in the host MCP config (Dashboard → API keys). Claude / ChatGPT prefer OAuth at `https://allstackd.com/mcp`.
 
 ## Happy path the agent should follow
 

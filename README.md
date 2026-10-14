@@ -35,8 +35,8 @@ Users still need an AllStackd account and a paid or trial plan. An install only 
 | `.claude-plugin/plugin.json` | Claude directory / Claude Code manifest |
 | `plugin.json` | Agent Plugins standard manifest |
 | `.cursor-plugin/plugin.json` | Cursor marketplace manifest |
-| `.mcp.json` | Claude remote MCP (OAuth URL, `type: http`) |
-| `mcp.json` | Cursor / CLI remote MCP (API key header, `type: http`) |
+| `.mcp.json` / `mcp.json` | Remote MCP for Claude (`type: http`, OAuth URL `https://allstackd.com/mcp`) |
+| `.claude-plugin/icon.png` | Directory listing icon (512×512 PNG) |
 | `skills/allstackd/SKILL.md` | Agent skill: SES portfolio workflow + ICP qualifier |
 | `antigravity/` | Installable Antigravity CLI plugin folder |
 | `listing.md` | Copy, test prompts, and portal field values |
@@ -48,7 +48,7 @@ Users still need an AllStackd account and a paid or trial plan. An install only 
 Authorization: Bearer as_...
 ```
 
-Hosted OAuth for ChatGPT / Codex is on `https://allstackd.com/mcp` (Clerk). API-key MCP remains at `https://allstackd.com/api/mcp`. Claude Connectors Directory is paused until a Team/Enterprise Claude org is available for publishing. See `submissions/oauth-and-annotations.md`.
+Claude / ChatGPT use OAuth at `https://allstackd.com/mcp` (Clerk). Cursor / Grok / CLI use Bearer API keys on `https://allstackd.com/api/mcp` — set the header in the host UI (do not commit secrets). See `submissions/oauth-and-annotations.md`.
 
 ## Install — Antigravity CLI
 

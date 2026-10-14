@@ -17,6 +17,6 @@ mkdir -p ~/.gemini/antigravity-cli/plugins
 cp -R allstackd-plugin/antigravity ~/.gemini/antigravity-cli/plugins/allstackd
 ```
 
-Set `ALLSTACKD_API_KEY` (Dashboard → API keys) before using MCP tools.
+After install, add a Bearer API key in the host MCP settings for `https://allstackd.com/api/mcp` (`Authorization: Bearer as_…` from Dashboard → API keys). Do not commit the key.
 
 **Product:** https://allstackd.com · **MCP:** `https://allstackd.com/api/mcp`
