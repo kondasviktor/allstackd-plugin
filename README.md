@@ -11,7 +11,8 @@ Public **connector-only** package for agent marketplaces. Manifests, skill, and 
 | **Cursor** | Live | [cursor.directory/plugins/allstackd](https://cursor.directory/plugins/allstackd) (+ official marketplace queue if submitted) |
 | **Grok Build** | Submitted | [xAI plugin-marketplace PR #1069](https://github.com/xai-org/plugin-marketplace/pull/1069). Manual MCP works today (below). |
 | **Antigravity CLI** | Available | Path install — Google has no self-serve third-party catalog yet. |
-| **Claude Connectors** | Submitted | [claude.ai/directory/manage/allstackd](https://claude.ai/directory/manage/allstackd) — MCP connector in review; plugin bundle validating |
+| **Claude Connectors** | Live | [claude.ai/directory/connectors/allstackd](https://claude.ai/directory/connectors/allstackd) (community). Docs: [allstackd.com/docs](https://allstackd.com/docs) → MCP. |
+| **Claude plugin** | Submitted | [Plugin manage](https://claude.ai/directory/manage/plugins/8ea0fe3c-66a6-4250-870b-7710fbbaaae6) — skill + OAuth MCP reference |
 | **ChatGPT / Codex** | Parked | OAuth MCP live at `https://allstackd.com/mcp`; directory submit deferred (demo video required) |
 
 Set `ALLSTACKD_API_KEY` (Dashboard → API keys) after any install.

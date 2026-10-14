@@ -1,12 +1,14 @@
 # Claude Connectors Directory + OpenAI plugin directory
 
-**Status:** Claude connector **submitted**; OpenAI directory still **parked**.
+**Status:** Claude connector **live** (community); plugin **submitted**; OpenAI directory still **parked**.
 
-- **Claude:** MCP connector submitted from Pro at [claude.ai/directory/manage/allstackd](https://claude.ai/directory/manage/allstackd). Plugin bundle uses `.claude-plugin/plugin.json` + `.mcp.json` (`type: http`, OAuth URL). Public repo: https://github.com/kondasviktor/allstackd-plugin
+- **Claude connector:** Published at [claude.ai/directory/connectors/allstackd](https://claude.ai/directory/connectors/allstackd). Manage: [claude.ai/directory/manage/allstackd](https://claude.ai/directory/manage/allstackd).
+- **Claude plugin:** Submitted — [manage plugins/…](https://claude.ai/directory/manage/plugins/8ea0fe3c-66a6-4250-870b-7710fbbaaae6). Pack: `.claude-plugin/plugin.json` + `.mcp.json` (`type: http`, OAuth URL). Public repo: https://github.com/kondasviktor/allstackd-plugin
+- **User docs:** https://allstackd.com/docs → MCP beta → Claude Connectors Directory
 - **OpenAI / ChatGPT / Codex:** Product OAuth MCP is live (`https://allstackd.com/mcp`, Clerk CIMD), but public directory submission is parked until a required demo-recording video is ready.
 
-**MCP URLs (still live for personal / custom use):**
-- OAuth (ChatGPT / Codex custom MCP): `https://allstackd.com/mcp`
+**MCP URLs:**
+- OAuth (Claude directory / ChatGPT custom MCP): `https://allstackd.com/mcp`
 - API key (Cursor / Grok / CLI): `https://allstackd.com/api/mcp`
 
 Use identity and test prompts from `../listing.md` when un-parking.
@@ -17,7 +19,7 @@ Use identity and test prompts from `../listing.md` when un-parking.
 
 Docs: https://claude.com/docs/connectors/building/submission · Plugins: https://claude.com/docs/plugins/submit
 
-**Decision:** Un-parked. Any paid Claude plan (Pro+) can submit. MCP connector is in review; fix plugin validation on the public connector repo as needed.
+**Decision:** Done for the MCP connector (community listing). Keep plugin review/pairing and docs in sync.
 
 ### Done / in flight
 
@@ -26,10 +28,12 @@ Docs: https://claude.com/docs/connectors/building/submission · Plugins: https:/
 - [x] Every tool has `title` + annotation hints (implemented in app)
 - [x] Privacy policy + docs URLs public
 - [x] Smoke-tested as a **custom connector** in Claude
-- [x] MCP connector submitted
+- [x] MCP connector submitted, approved, and **published** (community)
 - [x] `.claude-plugin/plugin.json` + `.mcp.json` with `"type": "http"` and `https://allstackd.com/mcp`
-- [ ] Reviewer workspace credentials confirmed in portal (see oauth-and-annotations.md)
-- [ ] Plugin bundle validation passes → submit for review → pair with connector
+- [x] Plugin bundle submitted
+- [x] Public docs: how to add AllStackd from the Claude Connectors Directory
+- [ ] Pair plugin listing with the connector when the plugin is live
+- [ ] Optional: pursue Verified label later (https://claude.com/docs/connectors/verification)
 
 Managing listings: https://claude.com/docs/connectors/building/managing-your-listing
 

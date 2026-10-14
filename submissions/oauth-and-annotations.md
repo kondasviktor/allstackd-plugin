@@ -1,6 +1,6 @@
 # MCP OAuth, tool annotations, and reviewer workspace
 
-**Status:** Tool annotations (including OpenAI-required `openWorldHint`) are implemented. Hosted MCP OAuth is implemented via **Clerk Hobby** at `https://allstackd.com/mcp`. API-key MCP remains at `https://allstackd.com/api/mcp`. Claude and OpenAI **directory** submissions are parked (see `02-claude-openai.md`); OAuth MCP stays available for custom ChatGPT connect.
+**Status:** Tool annotations (including OpenAI-required `openWorldHint`) are implemented. Hosted MCP OAuth is implemented via **Clerk Hobby** at `https://allstackd.com/mcp`. API-key MCP remains at `https://allstackd.com/api/mcp`. Claude Connectors Directory listing is **live** (community); OpenAI directory is still parked (see `02-claude-openai.md`).
 
 ## Tool annotations (done in app)
 

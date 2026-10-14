@@ -8,7 +8,7 @@ One vendor at a time, after production. Work top-down.
 |------:|-------|------|
 | 0 | [oauth-and-annotations.md](./oauth-and-annotations.md) | Clerk MCP OAuth + annotations (done in app; Clerk Dashboard CIMD still operator) |
 | 1 | [01-cursor.md](./01-cursor.md) | First agent listing (live on cursor.directory) |
-| 2 | [02-claude-openai.md](./02-claude-openai.md) | Claude connector **submitted** (Pro). Plugin bundle validating. OpenAI directory parked (demo video). OAuth MCP live. |
+| 2 | [02-claude-openai.md](./02-claude-openai.md) | Claude connector **live** (community). Plugin submitted. OpenAI directory parked (demo video). |
 | 3 | [03-aws-marketplace.md](./03-aws-marketplace.md) | Highest paid-intent channel |
 | 4–5 | [04-grok-antigravity.md](./04-grok-antigravity.md) | Same plugin bundle; Antigravity is path-install only |
 
