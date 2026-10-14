@@ -8,7 +8,7 @@
 
 - [ ] Production MCP responds at `https://allstackd.com/api/mcp`
 - [ ] Reviewer API key can call `list_projects` and `send_email`
-- [ ] This plugin package lives in a **public** GitHub repo that contains **only** this connector pack (Cursor Marketplace requires a public/open plugin for review). Suggested: extract/copy to `kondasviktor/allstackd-plugin`. **Never** open-source the private SaaS app or paste product source into that repo.
+- [ ] This plugin package lives in a **public** GitHub repo that contains **only** this connector pack (Cursor Marketplace requires a public/open plugin for review). Suggested: extract/copy to `allstackd/allstackd-plugin`. **Never** open-source the private SaaS app or paste product source into that repo.
 - [ ] Logo uploaded / linked from listing.md
 - [ ] Local test passed from `~/.cursor/plugins/local/allstackd`
 

@@ -1,38 +1,55 @@
 # MCP OAuth, tool annotations, and reviewer workspace
 
-**Status:** Annotations implemented in `app/api/mcp/route.ts`. OAuth and reviewer workspace remain production blockers before Claude / OpenAI submission.
+**Status:** Tool annotations (including OpenAI-required `openWorldHint`) are implemented. Hosted MCP OAuth is implemented via **Clerk Hobby** at `https://allstackd.com/mcp`. API-key MCP remains at `https://allstackd.com/api/mcp`. Claude and OpenAI **directory** submissions are parked (see `02-claude-openai.md`); OAuth MCP stays available for custom ChatGPT connect.
 
 ## Tool annotations (done in app)
 
-Every tool in `tools/list` must expose MCP annotations:
+Every tool in `tools/list` exposes MCP annotations with all three hints:
 
 | Tool | `title` | Hints |
 |------|---------|--------|
-| `list_projects` | List projects | `readOnlyHint: true` |
-| `list_domains` | List sender domains | `readOnlyHint: true` |
-| `list_templates` | List templates | `readOnlyHint: true` |
-| `preview_template` | Preview template | `readOnlyHint: true` |
-| `get_usage` | Get daily usage | `readOnlyHint: true` |
-| `list_contacts` | List contacts | `readOnlyHint: true` (if broadcasts beta on) |
-| `create_template` | Create template | `destructiveHint: true` (writes state) |
+| `list_projects` | List projects | `readOnlyHint: true`, `destructiveHint: false`, `openWorldHint: false` |
+| `list_domains` | List sender domains | read-only |
+| `list_templates` | List templates | read-only |
+| `preview_template` | Preview template | read-only |
+| `get_usage` | Get daily usage | read-only |
+| `list_contacts` | List contacts | read-only (if broadcasts beta on) |
+| `create_template` | Create template | `destructiveHint: true` |
 | `update_template` | Update template | `destructiveHint: true` |
 | `publish_template` | Publish template | `destructiveHint: true` |
-| `send_email` | Send transactional email | `destructiveHint: true` |
+| `send_email` | Send transactional email | `destructiveHint: true`, `openWorldHint: true` |
 
-Claude’s portal reads live `tools/list` and rejects missing titles / hints.
+Portal justifications live in `lib/mcp/types.ts` (`MCP_TOOL_JUSTIFICATIONS`) for the OpenAI submission form.
 
-## Hosted OAuth (required before Claude + OpenAI)
+## Hosted OAuth (Clerk Hobby — implemented)
 
-Plan explicitly deferred full OAuth server implementation until the product is production-ready. Track this checklist:
+No extra paid auth product. Clerk is the OAuth authorization server for MCP clients (ChatGPT / Codex).
 
-- [ ] OAuth 2.0 authorization server (or Clerk-backed OAuth) for the MCP resource
-- [ ] Dynamic client registration or pre-registered clients for Claude and OpenAI
-- [ ] Scopes mapped to AllStackd API scopes (`email:send`, `template:read`, etc.)
+### App routes
+
+| Route | Purpose |
+|-------|---------|
+| `https://allstackd.com/mcp` | Streamable HTTP MCP + Clerk OAuth (OpenAI path) |
+| `https://allstackd.com/api/mcp` | JSON-RPC MCP + Bearer API key (Cursor / Grok / CLI) |
+| `/.well-known/oauth-protected-resource/mcp` | RFC 9728 protected resource metadata |
+| `/.well-known/oauth-authorization-server` | RFC 8414 auth server metadata (Clerk) |
+
+### Operator checklist (Clerk Dashboard — required before OpenAI submit)
+
+- [ ] OAuth applications → Settings → **Publish CIMD support** (prefer CIMD)
+- [ ] Enable **Publish DCR support** only if ChatGPT / Scan Tools cannot use CIMD
+- [ ] Require PKCE (`S256`)
+- [ ] Default scopes: `openid`, `profile`, `email`
+- [ ] Pre-register OpenAI/ChatGPT client if CIMD admission is restricted to pre-registered clients
 - [ ] Keep Bearer API key as fallback for Cursor deep links and CLI installs
-- [ ] Document the authorize URL on https://allstackd.com/docs
+- [ ] Document OAuth MCP URL on https://allstackd.com/docs
 - [ ] Privacy policy and terms finalized (operator legal entity filled in)
 
-Reference: Claude submission requires OAuth for authenticated services; OpenAI plugin review expects OAuth credentials when OAuth is selected in the portal.
+### Engineering notes
+
+- OAuth sessions map Clerk `userId` → personal AllStackd workspace → default (oldest) project, with operator scopes (`email:send`, `template:*`, `analytics:read`, `contact:read`).
+- Tool handlers accept optional `projectId` for OAuth multi-project workspaces.
+- Source: `app/mcp/route.ts`, `lib/mcp/*`, `@clerk/mcp-tools`, `mcp-handler`.
 
 ## Reviewer workspace (create at go-live)
 
@@ -43,7 +60,7 @@ Dedicated AllStackd organization for vendor reviewers:
 - [ ] One AWS connection in Control (dogfood account)
 - [ ] One verified sender domain
 - [ ] One published template alias `welcome`
-- [ ] API key with scopes: `email:send`, `template:read`, `template:write`, `analytics:read`
+- [ ] Reviewer signs into Clerk (no MFA) for OAuth MCP; optional API key for `/api/mcp` smoke tests
 - [ ] Credentials shared only through the vendor’s secure reviewer channel (never in the public plugin repo)
 - [ ] Mailbox for test deliveries: e.g. `reviewer@allstackd.com` or a documented alias
 

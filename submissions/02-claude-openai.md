@@ -1,69 +1,89 @@
 # Claude Connectors Directory + OpenAI plugin directory
 
-**Status:** Blocked until hosted MCP OAuth is live. Annotations and listing copy are ready. See `oauth-and-annotations.md`.
+**Status:** Claude connector **submitted**; OpenAI directory still **parked**.
 
-**MCP URL:** `https://allstackd.com/api/mcp`
+- **Claude:** MCP connector submitted from Pro at [claude.ai/directory/manage/allstackd](https://claude.ai/directory/manage/allstackd). Plugin bundle uses `.claude-plugin/plugin.json` + `.mcp.json` (`type: http`, OAuth URL). Public repo: https://github.com/kondasviktor/allstackd-plugin
+- **OpenAI / ChatGPT / Codex:** Product OAuth MCP is live (`https://allstackd.com/mcp`, Clerk CIMD), but public directory submission is parked until a required demo-recording video is ready.
 
-Use identity and test prompts from `../listing.md`.
+**MCP URLs (still live for personal / custom use):**
+- OAuth (ChatGPT / Codex custom MCP): `https://allstackd.com/mcp`
+- API key (Cursor / Grok / CLI): `https://allstackd.com/api/mcp`
+
+Use identity and test prompts from `../listing.md` when un-parking.
 
 ---
 
-## A. Claude Connectors Directory
+## A. Claude Connectors Directory + plugin bundle
 
-Docs: https://claude.com/docs/connectors/building/submission
+Docs: https://claude.com/docs/connectors/building/submission · Plugins: https://claude.com/docs/plugins/submit
 
-### Preconditions
+**Decision:** Un-parked. Any paid Claude plan (Pro+) can submit. MCP connector is in review; fix plugin validation on the public connector repo as needed.
 
-- [ ] Anthropic **Team** or **Enterprise** org (Individual plans lack the submission portal)
-- [ ] Owner / Directory permission on that org
-- [ ] Remote MCP over HTTPS with **OAuth 2.0**
-- [ ] Every tool has `title` + `readOnlyHint` or `destructiveHint` (implemented in app)
-- [ ] Privacy policy + docs URLs public
-- [ ] Reviewer workspace populated (see oauth-and-annotations.md)
-- [ ] Smoke-tested as a **custom connector** in Claude before directory submit
+### Done / in flight
 
-### Steps
-
-1. Sign into Claude.ai as org Owner.
-2. Open **Organization settings → Directory** (submission portal).
-3. Submit the remote MCP server (not an MCPB desktop extension).
-4. Paste listing fields from `listing.md` (tagline, description, categories, docs, privacy, support, icon).
-5. Provide reviewer test credentials through the portal’s secure channel.
-6. Track status under Organization settings → Directory.
-7. Address reviewer feedback and resubmit from the same page.
-8. Expect **community** listing first; **verified** is Anthropic’s later selection.
+- [x] Claude Pro (or higher) can open [claude.ai/directory/manage](https://claude.ai/directory/manage)
+- [x] Remote MCP over HTTPS with **OAuth 2.0** (Clerk-backed)
+- [x] Every tool has `title` + annotation hints (implemented in app)
+- [x] Privacy policy + docs URLs public
+- [x] Smoke-tested as a **custom connector** in Claude
+- [x] MCP connector submitted
+- [x] `.claude-plugin/plugin.json` + `.mcp.json` with `"type": "http"` and `https://allstackd.com/mcp`
+- [ ] Reviewer workspace credentials confirmed in portal (see oauth-and-annotations.md)
+- [ ] Plugin bundle validation passes → submit for review → pair with connector
 
 Managing listings: https://claude.com/docs/connectors/building/managing-your-listing
 
 ---
 
-## B. OpenAI plugin directory (ChatGPT + Codex)
+## B. OpenAI plugin directory (ChatGPT + Codex) — parked
 
 Docs: https://developers.openai.com/plugins/deploy/submission  
 Review requirements: https://developers.openai.com/plugins/deploy/app-review
 
-The legacy ChatGPT “plugins” store is replaced by this MCP plugin flow. One approval publishes to the directory shared by ChatGPT and Codex after you click Publish.
+**Decision:** Parked. Hosted MCP OAuth and Clerk CIMD are done. OpenAI’s remote MCP directory flow still requires a **demo-recording URL** (video walkthrough of OAuth + the five positive test cases). Not recording that now — revisit when ready to film a short unlisted YouTube/Loom clip.
 
-### Preconditions
+Custom MCP connect in ChatGPT (non-directory) remains available at `https://allstackd.com/mcp`.
 
-- [ ] MCP works in ChatGPT **developer mode**
-- [ ] OAuth configured; portal can Scan Tools successfully
-- [ ] Domain verification: host token at `https://allstackd.com/.well-known/openai-apps-challenge`
-- [ ] Universal MCP URL (not per-tenant template URL)
-- [ ] Five positive + three negative tests from `listing.md`
-- [ ] Logo, company URL, privacy policy
+### Already done (keep)
 
-### Steps
+- [x] Hosted MCP OAuth at `https://allstackd.com/mcp` (Clerk tokens)
+- [x] OAuth metadata public (`/.well-known/oauth-protected-resource/mcp`, `/.well-known/oauth-authorization-server`)
+- [x] OpenAI-required tool annotations + justifications in `lib/mcp/types.ts`
+- [x] Clerk **Publish CIMD support** + admission: Any compatible CIMD client
+- [x] Universal MCP URL, privacy, terms, docs
 
-1. Open the OpenAI **plugin submission portal**.
-2. Choose **With MCP** (do not enter an existing connector / app id).
-3. Enter production MCP URL: `https://allstackd.com/api/mcp`.
-4. Add OAuth credentials; run **Scan Tools**.
-5. Complete CSP / domain verification if prompted (`/.well-known/openai-apps-challenge`).
-6. Fill name, logo, description, company, privacy, localization, test prompts/responses from `listing.md`.
-7. Submit for review; save the Case ID from the confirmation email.
-8. After approval, **Publish** from the portal (unpublished approvals stay invisible).
-9. Confirm the listing appears in the ChatGPT / Codex Plugins Directory.
+### Remaining before un-parking
+
+- [ ] Short demo-recording URL (required for MCP directory submit)
+- [ ] Reviewer demo account (no MFA) — see oauth-and-annotations.md
+- [ ] Smoke-test custom MCP in ChatGPT (OAuth → tools)
+- [ ] Portal **Scan Tools** + domain challenge (`/.well-known/openai-apps-challenge` when issued)
+- [ ] Five positive + three negative tests from `listing.md` (OAuth-worded)
+- [ ] Logo (≥512 square PNG)
+
+### Auth approach (no new paid SaaS)
+
+Use **Clerk Hobby (free)** as the OAuth 2.0 authorization server for MCP:
+
+- Enable **Publish CIMD support** in Clerk Dashboard → OAuth applications → Settings (prefer CIMD).
+- Client admission: **Any compatible CIMD client**.
+- Enable **Publish DCR support** only if OpenAI’s client does not support CIMD.
+- Require PKCE (`S256`).
+- Default scopes: `openid`, `profile`, `email`.
+- Keep Bearer API keys on `/api/mcp` for Cursor and CLI installs.
+
+### Steps (when un-parking)
+
+1. Record demo video (OAuth connect + five positive prompts); host unlisted.
+2. Open the OpenAI **plugin submission portal**.
+3. Choose **With MCP** (or upload ZIP + connect MCP).
+4. Enter production MCP URL: `https://allstackd.com/mcp`.
+5. Complete OAuth discovery; run **Scan Tools**.
+6. Complete domain verification if prompted (`/.well-known/openai-apps-challenge`).
+7. Fill name, logo, description, company, privacy, localization, test prompts, demo URL, reviewer credentials from `listing.md`.
+8. Submit for review; save the Case ID from the confirmation email.
+9. After approval, **Publish** from the portal (unpublished approvals stay invisible).
+10. Confirm the listing appears in the ChatGPT / Codex Plugins Directory.
 
 ### Domain challenge note
 
@@ -75,8 +95,7 @@ Do not commit live challenge tokens forever; rotate if OpenAI re-issues.
 
 ---
 
-## After both are live
+## After either directory is live
 
-- [ ] Link both directories from https://allstackd.com/docs
-- [ ] Monitor Claude Directory health dashboard for errors/latency
+- [ ] Link the directory from https://allstackd.com/docs
 - [ ] Keep tool annotations in sync when adding MCP tools

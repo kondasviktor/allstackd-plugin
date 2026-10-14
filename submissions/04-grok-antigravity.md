@@ -32,7 +32,7 @@ Adds AllStackd — Amazon SES portfolio control plane (remote MCP + skill).
 - Positioning: ops layer on customer SES, not a managed ESP
 
 ## Source
-- Repo: https://github.com/kondasviktor/allstackd-plugin
+- Repo: https://github.com/allstackd/allstackd-plugin
 - Pin SHA: <COMMIT_SHA>
 
 ## Test plan

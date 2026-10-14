@@ -15,7 +15,8 @@ Use this file when filling vendor submission portals. Replace placeholders marke
 | **Privacy policy** | https://allstackd.com/privacy |
 | **Terms** | https://allstackd.com/terms |
 | **Support** | support@allstackd.com |
-| **MCP URL** | https://allstackd.com/api/mcp |
+| **MCP URL (OAuth / OpenAI)** | https://allstackd.com/mcp |
+| **MCP URL (API key / Cursor)** | https://allstackd.com/api/mcp |
 | **Logo** | TODO: square PNG/SVG ≥512×512, dark-friendly mark from brand kit |
 | **Categories** | Email, Developer Tools, AWS, Productivity |
 
@@ -39,8 +40,9 @@ SES portfolio control plane: projects, domains, templates, and transactional sen
 
 ## Auth notes for reviewers
 
-- **Current:** Bearer API key (`as_…`) in `Authorization` header. Create under Dashboard → API keys after connecting AWS.
-- **Required before Claude / OpenAI directory:** Hosted OAuth 2.0 on the MCP endpoint (see `submissions/oauth-and-annotations.md`).
+- **OpenAI / ChatGPT / Codex:** OAuth 2.0 via Clerk on `https://allstackd.com/mcp` (sign in with the reviewer AllStackd/Clerk account; no MFA).
+- **Cursor / Grok / CLI:** Bearer API key (`as_…`) on `https://allstackd.com/api/mcp`. Create under Dashboard → API keys after connecting AWS.
+- Domain challenge for OpenAI (when issued): `https://allstackd.com/.well-known/openai-apps-challenge`
 
 ## Positive test prompts (5)
 

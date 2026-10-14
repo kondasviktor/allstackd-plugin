@@ -2,7 +2,7 @@
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "allstackd",
   "description": "Amazon SES control plane for product portfolios — list projects, domains, templates, and send transactional email through your own SES account.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "AllStackd",
     "email": "support@allstackd.com",
