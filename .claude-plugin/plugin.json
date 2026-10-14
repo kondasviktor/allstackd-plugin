@@ -19,7 +19,7 @@
     "mcp",
     "portfolio"
   ],
-  "icon": "./icon.png",
+  "icon": ".claude-plugin/icon.png",
   "privacyPolicyUrl": "https://allstackd.com/privacy",
   "documentationUrl": "https://allstackd.com/docs",
   "supportUrl": "mailto:support@allstackd.com",
