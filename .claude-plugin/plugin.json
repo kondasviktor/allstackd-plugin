@@ -2,7 +2,7 @@
   "name": "allstackd",
   "displayName": "AllStackd",
   "description": "Amazon SES control plane for product portfolios — list projects, domains, templates, and send transactional email through your own SES account.",
-  "version": "0.1.2",
+  "version": "0.1.5",
   "author": {
     "name": "AllStackd",
     "email": "support@allstackd.com",

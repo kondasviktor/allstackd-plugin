@@ -13,7 +13,7 @@ Public **connector-only** package for agent marketplaces. Manifests, skill, and 
 | **Antigravity CLI** | Available | Path install — Google has no self-serve third-party catalog yet. |
 | **Claude Connectors** | Live | [claude.ai/directory/connectors/allstackd](https://claude.ai/directory/connectors/allstackd) (community). Docs: [allstackd.com/docs](https://allstackd.com/docs) → MCP. |
 | **Claude plugin** | Submitted | [Plugin manage](https://claude.ai/directory/manage/plugins/8ea0fe3c-66a6-4250-870b-7710fbbaaae6) — skill + OAuth MCP reference |
-| **ChatGPT / Codex** | Parked | OAuth MCP live at `https://allstackd.com/mcp`; directory submit deferred (demo video required) |
+| **ChatGPT / Codex** | Parked | OAuth MCP works as a **custom / Dev Mode** app (`https://allstackd.com/mcp`). Public directory submit deferred — see `submissions/02-claude-openai.md` (OpenAI Platform UX). |
 
 Set `ALLSTACKD_API_KEY` (Dashboard → API keys) after any install.
 
@@ -34,10 +34,12 @@ Users still need an AllStackd account and a paid or trial plan. An install only 
 | Path | Purpose |
 |------|---------|
 | `.claude-plugin/plugin.json` | Claude directory / Claude Code manifest |
-| `plugin.json` | Agent Plugins standard manifest |
+| `.codex-plugin/plugin.json` | OpenAI / Codex compatibility manifest (`mcpServers` → `.mcp.json`) |
+| `plugin.json` | Agent Plugins standard + `extensions.com.openai.interface` |
 | `.cursor-plugin/plugin.json` | Cursor marketplace manifest |
-| `.mcp.json` / `mcp.json` | Remote MCP for Claude (`type: http`, OAuth URL `https://allstackd.com/mcp`) |
-| `.claude-plugin/icon.png` | Directory listing icon (512×512 PNG) |
+| `.mcp.json` / `mcp.json` | Remote MCP (`type: http`, OAuth URL `https://allstackd.com/mcp`) |
+| `assets/` | OpenAI listing logo / composer icons (512×512 PNG) |
+| `.claude-plugin/icon.png` | Claude directory listing icon (512×512 PNG) |
 | `skills/allstackd/SKILL.md` | Agent skill: SES portfolio workflow + ICP qualifier |
 | `antigravity/` | Installable Antigravity CLI plugin folder |
 | `listing.md` | Copy, test prompts, and portal field values |

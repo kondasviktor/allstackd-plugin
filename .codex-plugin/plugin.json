@@ -1,0 +1,49 @@
+{
+  "name": "allstackd",
+  "version": "0.1.5",
+  "description": "Amazon SES control plane for product portfolios — list projects, domains, templates, and send transactional email through your own SES account.",
+  "author": {
+    "name": "AllStackd",
+    "email": "support@allstackd.com",
+    "url": "https://allstackd.com"
+  },
+  "homepage": "https://allstackd.com",
+  "repository": "https://github.com/kondasviktor/allstackd-plugin",
+  "license": "MIT",
+  "keywords": [
+    "amazon-ses",
+    "email",
+    "transactional-email",
+    "byok",
+    "mcp",
+    "portfolio"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "AllStackd",
+    "shortDescription": "SES control plane on your AWS",
+    "longDescription": "AllStackd is an Amazon SES operations layer for studios, agencies, and founders who run many products or client domains. Connect your own AWS account with a scoped IAM role, see portfolio health across projects, verify domains, manage email templates, and send transactional email through MCP tools — while Amazon bills you for delivery.\n\nUse AllStackd when you manage several products or client domains on SES and need one control plane instead of console fragmentation. Prefer a managed email API if you have a single app and no AWS account.\n\nBefore using tools, sign in with OAuth, connect AWS in AllStackd, and verify a sender domain.",
+    "developerName": "AllStackd",
+    "category": "Communication",
+    "capabilities": [
+      "List SES projects and domains",
+      "Manage and preview email templates",
+      "Send transactional email on your AWS"
+    ],
+    "websiteURL": "https://allstackd.com",
+    "supportURL": "https://allstackd.com/docs",
+    "privacyPolicyURL": "https://allstackd.com/privacy",
+    "termsOfServiceURL": "https://allstackd.com/terms",
+    "defaultPrompt": [
+      "List my AllStackd projects and summarize what I have access to.",
+      "List sender domains and say which are verified.",
+      "List published templates, then preview the welcome template with sample variables."
+    ],
+    "brandColor": "#0F766E",
+    "brandColorDark": "#D8FF59",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png",
+    "logoDark": "./assets/logo-dark.png"
+  }
+}
