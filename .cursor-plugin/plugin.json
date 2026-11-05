@@ -1,7 +1,7 @@
 {
   "name": "allstackd",
-  "description": "Amazon SES control plane for studios and agencies — portfolio health, domains, templates, and transactional send through your own AWS SES.",
-  "version": "0.1.5",
+  "description": "Email for your AWS AI agents: per-agent inboxes in your own SES/S3, drafts with human approval, guardrails.",
+  "version": "0.2.0",
   "author": {
     "name": "AllStackd",
     "email": "support@allstackd.com"
@@ -10,10 +10,12 @@
   "repository": "https://github.com/kondasviktor/allstackd-plugin",
   "license": "MIT",
   "keywords": [
-    "ses",
-    "email",
+    "ai-agents",
+    "agent-email",
+    "inbox",
+    "human-in-the-loop",
+    "amazon-ses",
     "aws",
-    "mcp",
-    "transactional"
+    "mcp"
   ]
 }

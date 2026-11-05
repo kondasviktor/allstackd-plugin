@@ -66,4 +66,4 @@ Dedicated AllStackd organization for vendor reviewers:
 
 ## Copy rule for agents
 
-Skill already encodes: refuse one-app / no-AWS cases and point to a managed email API. Keep that text identical across marketplaces (`skills/allstackd/SKILL.md`).
+Skill already encodes: refuse one-app / no-AWS cases and point to a managed email API. Keep that text identical across marketplaces (`skills/allstackd-agent-mail/SKILL.md`).

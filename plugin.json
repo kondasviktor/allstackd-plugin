@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "allstackd",
-  "description": "Amazon SES control plane for product portfolios — list projects, domains, templates, and send transactional email through your own SES account.",
-  "version": "0.1.5",
+  "description": "Email for your AWS AI agents: per-agent inboxes in your own SES/S3, drafts with human approval, guardrails.",
+  "version": "0.2.0",
   "author": {
     "name": "AllStackd",
     "email": "support@allstackd.com",
@@ -12,35 +12,37 @@
   "repository": "https://github.com/kondasviktor/allstackd-plugin",
   "license": "MIT",
   "keywords": [
+    "ai-agents",
+    "agent-email",
+    "inbox",
+    "human-in-the-loop",
     "amazon-ses",
-    "email",
-    "transactional-email",
-    "byok",
-    "mcp",
-    "portfolio"
+    "aws",
+    "mcp"
   ],
   "mcpServers": "./.mcp.json",
   "extensions": {
     "com.openai": {
       "interface": {
         "displayName": "AllStackd",
-        "shortDescription": "SES control plane on your AWS",
-        "longDescription": "AllStackd is an Amazon SES operations layer for studios, agencies, and founders who run many products or client domains. Connect your own AWS account with a scoped IAM role, see portfolio health across projects, verify domains, manage email templates, and send transactional email through MCP tools — while Amazon bills you for delivery.\n\nUse AllStackd when you manage several products or client domains on SES and need one control plane instead of console fragmentation. Prefer a managed email API if you have a single app and no AWS account.\n\nBefore using tools, sign in with OAuth, connect AWS in AllStackd, and verify a sender domain.",
+        "shortDescription": "Agent email on your AWS",
+        "longDescription": "AllStackd gives each of your AI agents its own inbox inside your own AWS account. Mail arrives through Amazon SES into your S3 bucket, your agent reads and drafts replies through MCP, and nothing is sent until a person approves it. AllStackd stores metadata only; message bodies stay in your AWS account.\n\nUse AllStackd when your agents run on AWS and need to receive and answer email under guardrails. It is not a cold-email or bulk-marketing tool, and it needs an AWS account.\n\nBefore using tools, sign in with OAuth, connect AWS in AllStackd, enable agent mail on a subdomain and create an inbox.",
         "developerName": "AllStackd",
         "category": "Communication",
         "capabilities": [
-          "List SES projects and domains",
-          "Manage and preview email templates",
-          "Send transactional email on your AWS"
+          "List agent inboxes and threads",
+          "Read messages as untrusted content",
+          "Draft replies and request human approval",
+          "Check Amazon SES health"
         ],
         "websiteURL": "https://allstackd.com",
         "supportURL": "https://allstackd.com/docs",
         "privacyPolicyURL": "https://allstackd.com/privacy",
         "termsOfServiceURL": "https://allstackd.com/terms",
         "defaultPrompt": [
-          "List my AllStackd projects and summarize what I have access to.",
-          "List sender domains and say which are verified.",
-          "List published templates, then preview the welcome template with sample variables."
+          "List my agent inboxes and summarize new threads",
+          "Draft a reply to the latest thread in support@ for my approval",
+          "Show my SES health"
         ],
         "brandColor": "#0F766E",
         "brandColorDark": "#D8FF59",

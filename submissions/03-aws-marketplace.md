@@ -7,7 +7,7 @@
 ## Product framing for the listing
 
 - **Title:** AllStackd — Amazon SES Control Plane  
-- **Short:** Operations control plane for multi-project and multi-account SES.  
+- **Short:** Email for AWS AI agents: per-agent inboxes in your own SES/S3 with human approval.  
 - **Long:** Use copy from `../listing.md`. Repeat: customers pay Amazon for delivery; AllStackd is the ops layer. Link CloudFormation / AWS connect docs.  
 - **Categories:** Developer Tools / Business Applications (confirm in seller console)  
 - **Pricing dimensions:** Portfolio (€9), Studio (€29 hero), Agency (€79) — map to Marketplace contract dimensions in the currency AWS requires at listing time.
@@ -41,7 +41,7 @@ Do not invent fulfillment code in this plugin package; implement inside the SaaS
 
 ## Listing checklist
 
-- [ ] Product logo and screenshots (dashboard, AWS connect, portfolio health)
+- [ ] Product logo and screenshots (approval queue, inbox list, SES health)
 - [ ] Support and refund policy URLs
 - [ ] Privacy / terms / EULA links
 - [ ] “You pay Amazon for SES delivery” callout on the product page
