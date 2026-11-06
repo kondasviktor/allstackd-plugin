@@ -1,6 +1,6 @@
 {
   "name": "allstackd",
-  "description": "Email for your AWS AI agents: per-agent inboxes in your own SES/S3, drafts with human approval, guardrails.",
+  "description": "Email for your AI agents on AWS: bring any agent, per-agent inboxes in your own SES/S3, drafts with human approval, guardrails.",
   "source": {
     "source": "github",
     "repo": "kondasviktor/allstackd-plugin",

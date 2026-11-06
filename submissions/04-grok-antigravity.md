@@ -25,7 +25,7 @@ Announce: https://x.ai/news/grok-plugin-marketplace
 
 ```markdown
 ## Summary
-Adds AllStackd: email for your AWS AI agents. Per-agent inboxes in your own SES/S3, drafts with human approval, guardrails (remote MCP + skills).
+Adds AllStackd: email for your AI agents on AWS. Per-agent inboxes in your own SES/S3, drafts with human approval, guardrails (remote MCP + skills).
 
 - Remote MCP: `https://allstackd.com/api/mcp`
 - Auth: Bearer API key (`ALLSTACKD_API_KEY`); OAuth when available

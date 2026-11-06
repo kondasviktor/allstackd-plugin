@@ -1,6 +1,6 @@
 # AllStackd agent mail plugin
 
-Email for your AWS AI agents. Each agent gets its own inbox inside **your** AWS account: mail arrives through Amazon SES into your S3 bucket, the agent reads it and drafts replies through MCP, and **nothing is sent until a person approves it**. AllStackd stores metadata only; message bodies stay in your AWS account.
+Email for your AI agents on AWS. Bring any agent (Claude, ChatGPT, Hermes, OpenClaw, Cursor, Codex or your own); each one gets its own inbox inside **your** AWS account: mail arrives through Amazon SES into your S3 bucket, the agent reads it and drafts replies through MCP, and **nothing is sent until a person approves it**. AllStackd stores metadata only; message bodies stay in your AWS account.
 
 This repository is the public **connector pack**: manifests, skills and MCP client configuration that point at the hosted service. It is not the product source.
 

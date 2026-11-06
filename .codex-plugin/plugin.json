@@ -1,7 +1,7 @@
 {
   "name": "allstackd",
   "version": "0.2.0",
-  "description": "Email for your AWS AI agents: per-agent inboxes in your own SES/S3, drafts with human approval, guardrails.",
+  "description": "Email for your AI agents on AWS: bring any agent, per-agent inboxes in your own SES/S3, drafts with human approval, guardrails.",
   "author": {
     "name": "AllStackd",
     "email": "support@allstackd.com",
@@ -23,8 +23,8 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "AllStackd",
-    "shortDescription": "Agent email on your AWS",
-    "longDescription": "AllStackd gives each of your AI agents its own inbox inside your own AWS account. Mail arrives through Amazon SES into your S3 bucket, your agent reads and drafts replies through MCP, and nothing is sent until a person approves it. AllStackd stores metadata only; message bodies stay in your AWS account.\n\nUse AllStackd when your agents run on AWS and need to receive and answer email under guardrails. It is not a cold-email or bulk-marketing tool, and it needs an AWS account.\n\nBefore using tools, sign in with OAuth, connect AWS in AllStackd, enable agent mail on a subdomain and create an inbox.",
+    "shortDescription": "Email for AI agents on AWS",
+    "longDescription": "AllStackd handles email for your AI agents on AWS. Bring any agent and give it its own inbox inside your own AWS account. Mail arrives through Amazon SES into your S3 bucket, your agent reads and drafts replies through MCP, and nothing is sent until a person approves it. AllStackd stores metadata only; message bodies stay in your AWS account.\n\nUse AllStackd when your agents run on AWS and need to receive and answer email under guardrails. It is not a cold-email or bulk-marketing tool, and it needs an AWS account.\n\nBefore using tools, sign in with OAuth, connect AWS in AllStackd, enable agent mail on a subdomain and create an inbox.",
     "developerName": "AllStackd",
     "category": "Communication",
     "capabilities": [

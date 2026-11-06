@@ -9,7 +9,7 @@ Use this file when filling vendor submission portals. Nothing is submitted autom
 | **Name** | AllStackd |
 | **Slug** | `allstackd` |
 | **Version** | 0.2.0 |
-| **One-liner** | Email for your AWS AI agents: per-agent inboxes in your own SES/S3, drafts with human approval, guardrails. |
+| **One-liner** | Email for your AI agents on AWS: bring any agent, per-agent inboxes in your own SES/S3, drafts with human approval, guardrails. |
 | **Company** | AllStackd |
 | **Website** | https://allstackd.com |
 | **Docs** | https://allstackd.com/docs |
@@ -33,7 +33,7 @@ Requires an AllStackd account and an AWS connection. Free for up to 3 inboxes an
 
 ## Short description (≤160 chars)
 
-Email for your AWS AI agents: per-agent inboxes in your own SES/S3, drafts with human approval, guardrails.
+Email for your AI agents on AWS: bring any agent, per-agent inboxes in your own SES/S3, drafts with human approval, guardrails.
 
 ## Keywords
 
