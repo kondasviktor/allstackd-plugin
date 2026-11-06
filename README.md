@@ -4,7 +4,7 @@ Email for your AWS AI agents. Each agent gets its own inbox inside **your** AWS 
 
 This repository is the public **connector pack**: manifests, skills and MCP client configuration that point at the hosted service. It is not the product source.
 
-**Product:** [allstackd.com](https://allstackd.com) · **Docs:** [allstackd.com/docs](https://allstackd.com/docs) · **Security:** [allstackd.com/security](https://allstackd.com/security) · **Support:** support@allstackd.com
+**Product:** [allstackd.com](https://allstackd.com) · **Guides:** [allstackd.com/guides](https://allstackd.com/guides) · **Docs:** [allstackd.com/docs](https://allstackd.com/docs) · **Security:** [allstackd.com/security](https://allstackd.com/security) · **Support:** support@allstackd.com
 
 ## What the agent can do
 
@@ -28,7 +28,7 @@ An agent can never approve its own draft, change a policy or switch off the kill
 | **Grok Build / Grok Bot** | API key | `grok mcp add --transport http allstackd https://allstackd.com/api/mcp`. See [examples/grok-bot.md](./examples/grok-bot.md) |
 | **Muse Code** | API key | [examples/muse-code-settings.json](./examples/muse-code-settings.json) |
 | **Antigravity CLI** | API key | `agy plugin install "$(pwd)/allstackd-plugin/antigravity"` after cloning. See [antigravity/README.md](./antigravity/README.md) |
-| **Amazon Bedrock AgentCore** | API key | [examples/agentcore-gateway.md](./examples/agentcore-gateway.md) |
+| **Amazon Bedrock AgentCore** | API key | Runtime MCP client or Gateway OpenAPI target: [examples/agentcore-gateway.md](./examples/agentcore-gateway.md) |
 | **Strands Agents** | API key | [examples/strands_agent.py](./examples/strands_agent.py) |
 | **Your own server** | Webhook + API | [examples/webhook-to-agent.ts](./examples/webhook-to-agent.ts) |
 
