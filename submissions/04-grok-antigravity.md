@@ -20,19 +20,19 @@ Announce: https://x.ai/news/grok-plugin-marketplace
 1. Fork https://github.com/xai-org/plugin-marketplace
 2. Add a third-party entry under `external_plugins/` **or** reference the remote source in `.grok-plugin/marketplace.json` (preferred: remote source pinned to SHA — follow their README).
 3. Do **not** hand-edit `.grok-plugin/plugin-index.json`; run their generate/validate script after editing the catalog.
-4. Open a pull request with title: `Add AllStackd SES control plane plugin`
+4. Open a pull request with title: `Add AllStackd: agent email on your AWS SES`
 5. PR body (paste):
 
 ```markdown
 ## Summary
-Adds AllStackd — Amazon SES portfolio control plane (remote MCP + skill).
+Adds AllStackd: email for your AI agents on AWS. Per-agent inboxes in your own SES/S3, drafts with human approval, guardrails (remote MCP + skills).
 
 - Remote MCP: `https://allstackd.com/api/mcp`
 - Auth: Bearer API key (`ALLSTACKD_API_KEY`); OAuth when available
 - Positioning: ops layer on customer SES, not a managed ESP
 
 ## Source
-- Repo: https://github.com/allstackd/allstackd-plugin
+- Repo: https://github.com/kondasviktor/allstackd-plugin
 - Pin SHA: <COMMIT_SHA>
 
 ## Test plan
@@ -66,14 +66,14 @@ There is **no** documented self-serve third-party marketplace. Bundled “Build 
 From this monorepo:
 
 ```bash
-agy plugin install "$(git rev-parse --show-toplevel)/distribution/allstackd-plugin/antigravity"
+agy plugin install "$(git rev-parse --show-toplevel)/allstackd-plugin/antigravity"
 ```
 
 Or global copy:
 
 ```bash
 mkdir -p ~/.gemini/antigravity-cli/plugins
-cp -R distribution/allstackd-plugin/antigravity ~/.gemini/antigravity-cli/plugins/allstackd
+cp -R allstackd-plugin/antigravity ~/.gemini/antigravity-cli/plugins/allstackd
 ```
 
 Workspace alternative: `.agents/plugins/allstackd/` (or `_agents/plugins/`).
@@ -82,7 +82,7 @@ Workspace alternative: `.agents/plugins/allstackd/` (or `_agents/plugins/`).
 
 - `plugin.json` — required name + description
 - `.mcp.json` / `mcp.json` — remote AllStackd MCP
-- `skills/allstackd/SKILL.md` — same skill as Cursor/Grok
+- `skills/allstackd-agent-mail/SKILL.md` — same skill as Cursor/Grok
 
 ### Do not
 

@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "allstackd": {
+      "url": "https://allstackd.com/api/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:ALLSTACKD_API_KEY}"
+      }
+    }
+  }
+}
